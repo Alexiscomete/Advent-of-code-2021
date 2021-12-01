@@ -1,4 +1,7 @@
+package main;
+
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.Scanner;
 import java.util.function.Consumer;
 
@@ -6,10 +9,16 @@ public class GetInput {
     ArrayList<String> strings = new ArrayList<>();
 
     public GetInput() {
+        System.out.println("Your input :");
         Scanner sc = new Scanner(System.in);
-        while (sc.hasNextLine()) {
-            strings.add(sc.nextLine());
+        String answer = "";
+        while (!Objects.equals(answer, "stop")) {
+            answer = sc.nextLine();
+            if (!Objects.equals(answer, "stop")) {
+                strings.add(answer);
+            }
         }
+        System.out.println("Stop input");
     }
 
     public void forEach(Consumer<String> stringConsumer) {
