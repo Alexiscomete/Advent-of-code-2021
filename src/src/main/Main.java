@@ -13,6 +13,8 @@ public class Main {
             case 1:
                 if (part == 1) {
                     new main.day1.Part1();
+                } else {
+                    new main.day1.Part2();
                 }
                 break;
             default:
