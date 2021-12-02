@@ -1,11 +1,11 @@
-package main.day1;
+package main.days.day1;
 
 import main.Part;
 
 import java.util.function.Consumer;
 
-public class Part2 extends Part {
-    public Part2() {
+public class Part2d1 extends Part {
+    public Part2d1() {
         final int[] answer = {0};
         System.out.println("Consumer :");
         getInput.forEach(new Consumer<>() {
