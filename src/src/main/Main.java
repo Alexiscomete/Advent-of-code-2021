@@ -3,6 +3,8 @@ package main;
 import java.util.Scanner;
 import main.days.day1.*;
 import main.days.day2.*;
+import main.days.day3.Part1d3;
+import main.days.day3.Part2d3;
 
 public class Main {
     public static void main(String[] args) {
@@ -24,6 +26,13 @@ public class Main {
                     new Part1d2();
                 } else {
                     new Part2d2();
+                }
+                break;
+            case 3:
+                if (part == 1) {
+                    new Part1d3();
+                } else {
+                    new Part2d3();
                 }
                 break;
             default:

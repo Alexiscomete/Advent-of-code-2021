@@ -6,7 +6,7 @@ import java.util.Scanner;
 import java.util.function.Consumer;
 
 public class GetInput {
-    ArrayList<String> strings = new ArrayList<>();
+    private ArrayList<String> strings = new ArrayList<>();
 
     public GetInput() {
         System.out.println("Your input :");
@@ -23,5 +23,11 @@ public class GetInput {
 
     public void forEach(Consumer<String> stringConsumer) {
         strings.forEach(stringConsumer);
+    }
+
+    public ArrayList<String> getStrings() {
+        ArrayList<String> answer = new ArrayList<>();
+        forEach(answer::add);
+        return answer;
     }
 }
