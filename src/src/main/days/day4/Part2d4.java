@@ -38,6 +38,7 @@ public class Part2d4 extends Part {
         int it = -1;
         do {
             it++;
+            System.out.println(bingoGrids.size());
             for (BingoGrid bingoGrid : bingoGrids) {
                 bingoGrid.mark(integers.get(it));
             }
@@ -57,15 +58,15 @@ public class Part2d4 extends Part {
     }
 
     public void align() {
-        for (BingoGrid bingoGrid : bingoGrids) {
+        for (int i = 0; i < bingoGrids.size(); i++) {
+            BingoGrid bingoGrid = bingoGrids.get(i);
             if (bingoGrid.victory()) {
                 if (bingoGrids.size() > 1) {
                     bingoGrids.remove(bingoGrid);
-                    vic = null;
+                    i--;
                 } else {
                     vic = bingoGrid;
                 }
-                return;
             }
         }
     }
