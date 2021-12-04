@@ -1,5 +1,7 @@
 package main.days.day4;
 
+import java.util.function.Consumer;
+
 public record BingoGrid(BingoCase[][] bingoCases) {
 
     public void setMarkCase(int i, int j, boolean value) {
@@ -21,6 +23,24 @@ public record BingoGrid(BingoCase[][] bingoCases) {
         }
 
         return false;
+    }
+
+    public void mark(int num) {
+        for (BingoCase[] bingoCases1 : bingoCases) {
+            for (BingoCase bingoCase : bingoCases1) {
+                if (bingoCase.getValue() == num) {
+                    bingoCase.setMarked(true);
+                }
+            }
+        }
+    }
+
+    public void forEach(Consumer<BingoCase> bingoCaseConsumer) {
+        for (BingoCase[] bingoCases1 : bingoCases) {
+            for (BingoCase bingoCase : bingoCases1) {
+                bingoCaseConsumer.accept(bingoCase);
+            }
+        }
     }
 
 }
