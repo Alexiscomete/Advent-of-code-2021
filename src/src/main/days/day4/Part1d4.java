@@ -3,6 +3,9 @@ package main.days.day4;
 import main.Part;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Objects;
 
 public class Part1d4 extends Part {
 
@@ -21,8 +24,9 @@ public class Part1d4 extends Part {
                     integers.add(Integer.parseInt(s));
                 }
             } else if (i[0] > 0){
-                String[] strings = line.split(" ");
-                gridBuilder.setLine(i[0]-1, Integer.parseInt(strings[0]), Integer.parseInt(strings[1]), Integer.parseInt(strings[2]), Integer.parseInt(strings[3]), Integer.parseInt(strings[4]));
+                String[] strings1 = line.split(" ");
+                List<String> strings = Arrays.stream(strings1).filter((str) -> !Objects.equals(str, "")).toList();
+                gridBuilder.setLine(i[0]-1, Integer.parseInt(strings.get(0)), Integer.parseInt(strings.get(1)), Integer.parseInt(strings.get(2)), Integer.parseInt(strings.get(3)), Integer.parseInt(strings.get(4)));
                 if (i[0] == 5) {
                     i[0] = -1;
                     bingoGrids.add(gridBuilder.generate());
