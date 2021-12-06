@@ -28,9 +28,11 @@ public class Part1d6 extends Part {
                             fish.setDays(fish.getDays()-1);
                             if (fish.getDays() == 0) {
                                 fish.setDays(fish.getMaxDay());
-                                newFish.add(new Fish(fish.getMaxDay() +2, fish.getMaxDay() +2));
+                                newFish.add(new Fish(9, 7));
                             }
                         }
+                        System.out.println(fishArray);
+                        System.out.println(fishArray.size());
                         fishArray.addAll(newFish);
                     }
                     System.out.println(fishArray.size());

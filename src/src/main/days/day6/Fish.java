@@ -21,4 +21,8 @@ public class Fish {
         this.maxDay = maxDay;
     }
 
+    @Override
+    public String toString() {
+        return "F{" +days + '}';
+    }
 }
