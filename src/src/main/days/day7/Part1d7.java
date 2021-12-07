@@ -2,6 +2,8 @@ package main.days.day7;
 
 import main.Part;
 
+import java.util.Arrays;
+
 public class Part1d7 extends Part {
     public Part1d7() {
         final int[][] integers = {{}};
@@ -18,6 +20,7 @@ public class Part1d7 extends Part {
             integers[0] = ints;
         });
 
+        integers[0] = Arrays.stream(integers[0]).sorted().toArray();
         long coox;
         if (integers[0].length%2==0) {
             coox = integers[0][integers[0].length/2];
