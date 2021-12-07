@@ -11,6 +11,8 @@ import main.days.day5.Part1d5;
 import main.days.day5.Part2d5;
 import main.days.day6.Part1d6;
 import main.days.day6.Part2d6;
+import main.days.day7.Part1d7;
+import main.days.day7.Part2d7;
 
 public class Main {
     public static void main(String[] args) {
@@ -60,6 +62,13 @@ public class Main {
                     new Part1d6();
                 } else {
                     new Part2d6();
+                }
+                break;
+            case 7:
+                if (part == 1) {
+                    new Part1d7();
+                } else {
+                    new Part2d7();
                 }
                 break;
             default:

@@ -31,7 +31,7 @@ public class Part1d6 extends Part {
                                 newFish.add(new Fish(9, 7));
                             }
                         }
-                        System.out.println(fishArray);
+                        //System.out.println(fishArray);
                         System.out.println(fishArray.size());
                         fishArray.addAll(newFish);
                     }
