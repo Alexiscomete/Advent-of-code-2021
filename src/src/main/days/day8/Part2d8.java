@@ -12,7 +12,7 @@ public class Part2d8 extends Part {
         final Character[] chars = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'};
 
         getInput.forEach(s -> {
-            String[] strings = s.substring(s.indexOf("|") + 1).split(" ");
+            String[] strings = s.split(" ");
             List<Character> charactersH0 = new ArrayList<>(), charactersH1 = new ArrayList<>(), charactersH2 = new ArrayList<>(), charactersV0R = new ArrayList<>(), charactersV0L = new ArrayList<>(), charactersV1R = new ArrayList<>(), charactersV1L = new ArrayList<>();
             Collections.addAll(charactersH0, chars);
             Collections.addAll(charactersH1, chars);
