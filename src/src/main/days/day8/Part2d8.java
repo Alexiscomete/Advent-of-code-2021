@@ -24,11 +24,17 @@ public class Part2d8 extends Part {
 
             for (String digit : strings) {
                 if (digit.length() == 2) {
-                    for (Character c : charactersH0) {
-                        if (!digit.contains(c)) {
-
-                        }
-                    }
+                    charactersV0R.removeIf(c -> !digit.contains(c.toString()));
+                    charactersV1R.removeIf(c -> !digit.contains(c.toString()));
+                } else if (digit.length() == 4) {
+                    charactersV0R.removeIf(c -> !digit.contains(c.toString()));
+                    charactersV1R.removeIf(c -> !digit.contains(c.toString()));
+                    charactersV0L.removeIf(c -> !digit.contains(c.toString()));
+                    charactersH1.removeIf(c -> !digit.contains(c.toString()));
+                } else if (digit.length() == 3) {
+                    charactersV0R.removeIf(c -> !digit.contains(c.toString()));
+                    charactersV1R.removeIf(c -> !digit.contains(c.toString()));
+                    charactersH0.removeIf(c -> !digit.contains(c.toString()));
                 }
             }
         });
