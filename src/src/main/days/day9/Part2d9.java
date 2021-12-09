@@ -17,17 +17,17 @@ public class Part2d9 extends Part {
             }
             arr.add(temp);
         });
-        int sum = 0;
+        ArrayList<Integer> basinSizes = new ArrayList<>();
         for (int x = 0; x < arrayList.size(); x++) {
             String line = arrayList.get(x);
             for (int y = 0; y < line.length(); y++) {
-                char caseChar = line.charAt(y);
-                if ((y == 0 || line.charAt(y-1) > caseChar) && (x == 0 || arrayList.get(x-1).charAt(y) > caseChar) && (y == line.length()-1 || line.charAt(y+1) > caseChar) && (x == arrayList.size()-1 || arrayList.get(x+1).charAt(y) > caseChar)) {
-                    sum+=Integer.parseInt(String.valueOf(caseChar))+1;
+                if (arr.get(x).get(y)) {
+                    basinSizes.add(calcBasin(x, y));
                 }
             }
         }
-        System.out.println(sum);
+        basinSizes.sort(Integer::compareTo);
+        System.out.println(basinSizes.get(basinSizes.size()-1) * basinSizes.get(basinSizes.size()-2) * basinSizes.get(basinSizes.size()-3));
     }
 
     public int calcBasin(int x, int y) {
