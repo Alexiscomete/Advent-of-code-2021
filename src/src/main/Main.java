@@ -2,6 +2,8 @@ package main;
 
 import java.util.Scanner;
 import main.days.day1.*;
+import main.days.day10.Part1d10;
+import main.days.day10.Part2d10;
 import main.days.day2.*;
 import main.days.day3.Part1d3;
 import main.days.day3.Part2d3;
@@ -87,6 +89,13 @@ public class Main {
                     new Part1d9();
                 } else {
                     new Part2d9();
+                }
+                break;
+            case 10:
+                if (part == 1) {
+                    new Part1d10();
+                } else {
+                    new Part2d10();
                 }
                 break;
             default:
