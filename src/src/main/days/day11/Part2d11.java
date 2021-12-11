@@ -22,9 +22,10 @@ public class Part2d11 extends Part {
             }
         });
 
-        int answer = 0;
-
-        for (int i = 0; i < 100; i++) {
+        boolean repeat = true;
+        int i = 0;
+        while (repeat) {
+            int answer = 0;
 
             for (int j = 0; j < 10; j++) {
                 for (int k = 0; k < 10; k++) {
@@ -64,9 +65,13 @@ public class Part2d11 extends Part {
                 System.out.println(Arrays.toString(cases[j]));
             }
             System.out.println("-----");
+            if (answer == 100) {
+                System.out.println(i+1);
+                repeat = false;
+            }
+            i++;
         }
 
-        System.out.println(answer);
     }
 
     public boolean check() {
