@@ -2,11 +2,11 @@ package main.days.day11;
 
 import main.Part;
 
+import java.util.Arrays;
 import java.util.function.Consumer;
 
 public class Part1d11 extends Part {
     int[][] cases = new int[10][10];
-    boolean[][] booleans = new boolean[10][10];
 
     public Part1d11() {
         getInput.forEach(new Consumer<>() {
@@ -35,7 +35,7 @@ public class Part1d11 extends Part {
             while (check()) {
                 for (int j = 0; j < 10; j++) {
                     for (int k = 0; k < 10; k++) {
-                        if (cases[j][k] > 8) {
+                        if (cases[j][k] > 9) {
                             cases[j][k] = -1;
                             if (j != 0) {
                                 if (k != 0 && cases[j-1][k-1] != -1) cases[j-1][k-1]++;
@@ -43,7 +43,7 @@ public class Part1d11 extends Part {
                                 if (k != 9 && cases[j-1][k+1] != -1) cases[j-1][k+1]++;
                             }
                             if (k != 0 && cases[j][k-1] != -1) cases[j][k-1]++;
-                            if (k != 9 && cases[j][k+1] != -1) cases[j][k-1]++;
+                            if (k != 9 && cases[j][k+1] != -1) cases[j][k+1]++;
                             if (j != 9) {
                                 if (k != 0 && cases[j+1][k-1] != -1) cases[j+1][k-1]++;
                                 if (cases[j+1][k] != -1) cases[j+1][k]++;
@@ -61,7 +61,9 @@ public class Part1d11 extends Part {
                         answer++;
                     }
                 }
+                System.out.println(Arrays.toString(cases[j]));
             }
+            System.out.println("-----");
         }
 
         System.out.println(answer);
@@ -70,7 +72,7 @@ public class Part1d11 extends Part {
     public boolean check() {
         for (int j = 0; j < 10; j++) {
             for (int k = 0; k < 10; k++) {
-                if (cases[j][k] > 8) {
+                if (cases[j][k] > 9) {
                     return true;
                 }
             }
