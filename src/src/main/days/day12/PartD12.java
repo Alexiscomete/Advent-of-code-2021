@@ -13,7 +13,15 @@ public class PartD12 extends Part {
     }
 
     protected void addPath(String path) {
-
+        String[] str = path.split("-");
+        if (!caves.containsKey(str[0])) {
+            addCave(str[0]);
+        }
+        caves.get(str[0]).addPath(str[1]);
+        if (!caves.containsKey(str[1])) {
+            addCave(str[1]);
+        }
+        caves.get(str[1]).addPath(str[0]);
     }
 
     protected void addCave(String cave) {

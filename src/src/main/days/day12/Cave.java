@@ -15,4 +15,8 @@ public abstract class Cave {
     }
 
     abstract void findPath();
+
+    public boolean canTravelTo() {
+        return true;
+    }
 }

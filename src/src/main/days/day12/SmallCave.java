@@ -10,4 +10,9 @@ public class SmallCave extends Cave {
     void findPath() {
 
     }
+
+    @Override
+    public boolean canTravelTo() {
+        return false;
+    }
 }
