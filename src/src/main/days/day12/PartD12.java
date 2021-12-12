@@ -7,6 +7,7 @@ import java.util.HashMap;
 public class PartD12 extends Part {
 
     private final HashMap<String, Cave> caves = new HashMap<>();
+    public int numberOfPaths = 0;
 
     public Cave getCaveByName(String name) {
         return caves.get(name);

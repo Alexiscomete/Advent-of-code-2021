@@ -7,8 +7,10 @@ public class StartCave extends Cave {
     }
 
     @Override
-    void findPath() {
-
+    void findPath(PartD12 partD12) {
+        for (String str : paths) {
+            partD12.getCaveByName(str).findPath(partD12);
+        }
     }
 
     @Override

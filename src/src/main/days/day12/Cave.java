@@ -14,7 +14,7 @@ public abstract class Cave {
         paths.add(path);
     }
 
-    abstract void findPath();
+    abstract void findPath(PartD12 partD12);
 
     public boolean canTravelTo() {
         return true;

@@ -7,7 +7,12 @@ public class BigCave extends Cave {
     }
 
     @Override
-    void findPath() {
-
+    void findPath(PartD12 partD12) {
+        for (String str : paths) {
+            Cave cave = partD12.getCaveByName(str);
+            if (cave.canTravelTo()) {
+                cave.findPath(partD12);
+            }
+        }
     }
 }
