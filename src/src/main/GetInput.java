@@ -6,7 +6,7 @@ import java.util.Scanner;
 import java.util.function.Consumer;
 
 public class GetInput {
-    private ArrayList<String> strings = new ArrayList<>();
+    private final ArrayList<String> strings = new ArrayList<>();
 
     public GetInput() {
         System.out.println("Your input :");
