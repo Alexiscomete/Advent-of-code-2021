@@ -19,5 +19,6 @@ public class Part1d13 extends Part {
                 grid.fold(str.charAt(11) == 'x', Integer.parseInt(str.substring(13)));
             }
         });
+        System.out.println(grid.howMany());
     }
 }

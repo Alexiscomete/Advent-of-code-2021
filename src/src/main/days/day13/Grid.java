@@ -11,7 +11,7 @@ public class Grid {
     }
 
     private void checkGrid(int x, int y) {
-        while (gridDots.size() < y) {
+        while (gridDots.size() < y+1) {
             gridDots.add(new ArrayList<>());
         }
         for (ArrayList<Character> characters : gridDots) {
@@ -20,7 +20,7 @@ public class Grid {
     }
 
     private void checkW(int x, ArrayList<Character> characters) {
-        while (characters.size() < x) {
+        while (characters.size() < x+1) {
             characters.add('.');
         }
     }
@@ -41,15 +41,29 @@ public class Grid {
             }
         } else {
             for (int y = 0; y < num; y++) {
-                for (int x = 0; x < gridDots.size(); x++) {
-                    char c2 = gridDots.get(2*num-y).get(x);
+                for (int x = 0; x < gridDots.get(y).size(); x++) {
+                    char c2 = gridDots.get(gridDots.size()-1).get(x);
                     if (c2 == '#') {
                         gridDots.get(y).set(x, '#');
                     }
                 }
-                gridDots.remove(2*num-y);
+                gridDots.remove(gridDots.size()-1);
             }
-            gridDots.remove(num);
+            if (gridDots.size() > num) {
+                gridDots.remove(num);
+            }
         }
+    }
+
+    public int howMany() {
+        int total = 0;
+        for (ArrayList<Character> characters : gridDots) {
+            for (char c : characters) {
+                if (c == '#') {
+                    total++;
+                }
+            }
+        }
+        return total;
     }
 }
