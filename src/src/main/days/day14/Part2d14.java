@@ -21,6 +21,7 @@ public class Part2d14 extends Part {
             }
         });
         for (int i = 0; i < 40; i++) {
+            System.out.println(i);
             String lastString = strings[0];
             strings[0] = "";
             for (int j = 0;  j < lastString.length()-1; j++) {
@@ -28,6 +29,7 @@ public class Part2d14 extends Part {
                 for (Rule rule : rules) {
                     if (rule.isApply(lastString.charAt(j), lastString.charAt(j+1))) {
                         strings[0] += rule.c();
+                        break;
                     }
                 }
             }
@@ -41,7 +43,6 @@ public class Part2d14 extends Part {
                 hashMap.put(c, 1);
             }
         }
-
         ArrayList<Integer> integers = new ArrayList<>(hashMap.values());
         integers.sort(Integer::compareTo);
         System.out.println(integers.get(integers.size()-1) - integers.get(0));

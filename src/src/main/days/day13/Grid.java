@@ -29,15 +29,15 @@ public class Grid {
         if (axe) {
             for (int x = 0; x < num; x++) {
                 for (ArrayList<Character> gridDot : gridDots) {
-                    char c2 = gridDot.get(2 * num - x);
+                    char c2 = gridDot.get(gridDot.size()-1);
                     if (c2 == '#') {
                         gridDot.set(x, '#');
                     }
-                    gridDot.remove(2 * num - x);
+                    gridDot.remove(gridDot.size()-1);
                 }
             }
             for (ArrayList<Character> gridDot : gridDots) {
-                gridDot.remove(num);
+                gridDot.remove(gridDot.size()-1);
             }
         } else {
             for (int y = 0; y < num; y++) {
@@ -49,9 +49,7 @@ public class Grid {
                 }
                 gridDots.remove(gridDots.size()-1);
             }
-            if (gridDots.size() > num) {
-                gridDots.remove(num);
-            }
+            gridDots.remove(gridDots.size()-1);
         }
     }
 
