@@ -41,24 +41,28 @@ public class Case {
             int trav = map.get(y).get(x+1).travel();
             if (trav != -1 && min < trav) {
                 min = trav;
+                System.out.println("h");
             }
         }
         if (canTravelTo(x-1, y)) {
             int trav = map.get(y).get(x-1).travel();
             if (trav != -1 && min < trav) {
                 min = trav;
+                System.out.println("g");
             }
         }
         if (canTravelTo(x, y-1)) {
             int trav = map.get(y-1).get(x).travel();
             if (trav != -1 && min < trav) {
                 min = trav;
+                System.out.println("e");
             }
         }
         if (canTravelTo(x, y+1)) {
             int trav = map.get(y+1).get(x).travel();
             if (trav != -1 && min < trav) {
                 min = trav;
+                System.out.println("f");
             }
         }
         canTravel = true;
