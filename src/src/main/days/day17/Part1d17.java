@@ -19,12 +19,40 @@ public class Part1d17 extends Part {
 
     }
 
+    public Integer getMaxY(int velY) {
+        int y = 0;
+        while (velY > 0) {
+            y += velY;
+            velY--;
+        }
+        return y;
+    }
+
     public Integer getVelocityX() {
-        return (int) (((Math.sqrt(8.0 * pos[0] +1.0) -1.0) + 1) / 2);
+        return (int) (((Math.sqrt(8.0 * pos[0] + 1.0) - 1.0) + 1) / 2);
     }
 
     public Integer getVelocityY(int velX) {
-        return 0;
+        int velY = 0;
+        boolean rep = true, dir = simulate(velX, velY);
+        while (rep) {
+            boolean sim = simulate(velX, velY);
+            if (dir) {
+                if (sim) {
+                    velY++;
+                } else {
+                    rep = false;
+                    velY--;
+                }
+            } else {
+                if (sim) {
+                    rep = false;
+                } else {
+                    velY--;
+                }
+            }
+        }
+        return velY;
     }
 
     public boolean simulate(int velX, int velY) {
