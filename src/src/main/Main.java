@@ -16,6 +16,8 @@ import main.days.day15.Part1d15;
 import main.days.day15.Part2d15;
 import main.days.day16.Part1d16;
 import main.days.day16.Part2d16;
+import main.days.day17.Part1d17;
+import main.days.day17.Part2d17;
 import main.days.day2.*;
 import main.days.day3.Part1d3;
 import main.days.day3.Part2d3;
@@ -150,6 +152,13 @@ public class Main {
                     new Part1d16();
                 } else {
                     new Part2d16();
+                }
+                break;
+            case 17:
+                if (part == 1) {
+                    new Part1d17();
+                } else {
+                    new Part2d17();
                 }
                 break;
             default:
