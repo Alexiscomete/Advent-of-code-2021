@@ -7,16 +7,17 @@ public class Part1d17 extends Part {
 
     public Part1d17() {
         getInput.forEach((str) -> {
+            str = str.replace('.', ';');
             str = str.substring(15);
             String[] strings = str.split(", y=");
-            String[] x = strings[0].split("..");
-            String[] y = strings[0].split("..");
+            String[] x = strings[0].split(";;");
+            String[] y = strings[0].split(";;");
             pos[0] = Integer.parseInt(x[0]);
             pos[1] = Integer.parseInt(x[1]);
             pos[2] = Integer.parseInt(y[0]);
             pos[3] = Integer.parseInt(y[1]);
         });
-
+        System.out.println(getMaxY(getVelocityY(getVelocityX())));
     }
 
     public Integer getMaxY(int velY) {
