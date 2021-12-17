@@ -20,18 +20,21 @@ public class Part1d17 extends Part {
     }
 
     public Integer getVelocityX() {
-        return 0;
+        return (int) (((Math.sqrt(8.0 * pos[0] +1.0) -1.0) + 1) / 2);
     }
 
-    public Integer getVelocityY() {
+    public Integer getVelocityY(int velX) {
         return 0;
     }
 
     public boolean simulate(int velX, int velY) {
         int x = 0, y = 0;
-        while (x < pos[1] && y < pos[3]) {
+        while (x <= pos[1] && y <= pos[3]) {
             x += velX;
             y += velY;
+            if (x >= pos[0] && y >= pos[2]) {
+                return true;
+            }
             velY--;
             if (x > 0) {
                 velX--;
